@@ -17,6 +17,7 @@ export default {};
 
 .tag {
   &--start {
+    font-size: 2.4rem;
     &::before {
       content: "<";
     }
@@ -25,6 +26,7 @@ export default {};
     }
   }
   &--end {
+    font-size: 2rem;
     &::before {
       content: "</";
     }
