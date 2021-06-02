@@ -1,0 +1,10 @@
+button {
+    user-select: none;
+    &:focus { 
+        outline: none; 
+    }
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,12 @@
+$m-color: (
+  primary: rgb(58, 46, 168),
+  secondary: rgb(72, 72, 77),
+  warning: rgb(255, 148, 61),
+  success: rgb(0, 175, 58),
+);
+
+:root {
+  @each $key, $value in $m-color {
+    --m-color-#{$key}: #{$value};
+  }
+}
