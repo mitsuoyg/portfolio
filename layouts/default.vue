@@ -37,4 +37,33 @@ export default {};
     }
   }
 }
+
+.link {
+  position: relative;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: 0.3s;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+
+    height: 3px;
+    width: 0;
+    background: #fff;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  &:hover {
+    opacity: 1;
+    &::after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
 </style>

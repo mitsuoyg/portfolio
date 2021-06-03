@@ -6,7 +6,7 @@
     <div class="m-container">
       <div class="m-info__body">
         <h1 class="m-info__name">Mitsuo Yshara</h1>
-        <p class="m-info__description mt-1">Soy un Desarrollador Frontend</p>
+        <p class="m-info__description mt-1">Soy Desarrollador Frontend</p>
         <m-btn @click="scrollTo('about')" class="mt-5"
           >Sobre Mí
           <v-icon right style="font-size: 1rem">mdi-arrow-right</v-icon></m-btn
@@ -47,6 +47,7 @@ export default {
   }
   &__description {
     font-size: 1.4rem;
+    opacity: .6;
   }
 }
 

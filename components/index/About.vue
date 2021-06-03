@@ -73,10 +73,10 @@ $network-size: 100px;
   &__icon {
     font-size: 4rem;
     cursor: pointer;
-    color: #adadad;
+    opacity: 0.7;
 
     &:hover {
-      color: #fff;
+      opacity: 1;
     }
   }
 }
