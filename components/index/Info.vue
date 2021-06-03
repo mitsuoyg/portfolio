@@ -100,6 +100,7 @@ export default {
   height: 40px;
   margin-bottom: 4px;
   border: 1px solid #fff;
+  background: #fff;
   position: relative;
   transition: 0.3s;
 
