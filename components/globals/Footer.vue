@@ -3,12 +3,12 @@
     <div class="m-container">
       <div class="footer__body">
         <img @click="scrollTop()" src="logo.png" alt="" class="footer__logo" />
-        <ul class="networks mt-4">
+        <ul class="networks mt-5">
           <li v-for="(network, idx) in networks" :key="idx" class="network">
             <a href="">{{ network.name }}</a>
           </li>
         </ul>
-        <p class="footer__copy mt-8">© 2021 Yshara Mitsuo</p>
+        <p class="footer__copy mt-8">© 2021 Mitsuo Yshara</p>
       </div>
     </div>
   </footer>
@@ -50,7 +50,7 @@ export default {
     align-items: center;
   }
   &__logo {
-    max-width: 120px;
+    max-width: 100px;
     cursor: pointer;
   }
 }
