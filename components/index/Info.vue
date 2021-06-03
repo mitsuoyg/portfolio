@@ -83,6 +83,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
+  user-select: none;
 
   &__body {
     width: max-content;
