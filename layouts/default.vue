@@ -41,6 +41,7 @@ export default {};
 .link {
   position: relative;
   font-weight: bold;
+  user-select: none;
   opacity: 0.7;
   transition: 0.3s;
 
