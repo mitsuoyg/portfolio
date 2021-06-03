@@ -3,6 +3,7 @@
     <v-main>
       <nuxt class="m-app" />
     </v-main>
+    <globals-footer />
   </v-app>
 </template>
 

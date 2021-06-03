@@ -1,7 +1,7 @@
 <template>
   <div class="m-container">
     <section class="projects">
-      <h2 class="tag--start">proyectos</h2>
+      <h2 class="tag--start">projects</h2>
       <div class="projects__body">
         <div
           v-for="(project, idx) in projects"
@@ -13,7 +13,7 @@
           <div class="project__body">
             <h3 class="project__title">{{ project.title }}</h3>
             <p class="project__description mt-3">{{ project.description }}</p>
-            <a :href="project.url" target="_blank">
+            <a v-if="project.url" :href="project.url" target="_blank">
               <m-btn color="primary" class="mt-3"
                 >Visitar
                 <v-icon right style="font-size: 1rem">mdi-arrow-right</v-icon>
@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <h2 class="tag--end">proyectos</h2>
+      <h2 class="tag--end">projects</h2>
     </section>
   </div>
 </template>
@@ -31,6 +31,12 @@
 export default {
   data: () => ({
     projects: [
+      {
+        title: "Mi Portafolio",
+        description:
+          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium ullam accusamus aspernatur veniam, sunt dolor reprehenderit voluptates optio provident.",
+        image: "projects/mibot.png",
+      },
       {
         title: "MiBot",
         description:
@@ -51,7 +57,7 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-$project-background: rgba(2, 29, 68, 0.7);
+$project-background: rgba(2, 29, 68, 0.75);
 
 .projects {
   padding: 100px 0;
@@ -66,15 +72,16 @@ $project-background: rgba(2, 29, 68, 0.7);
 .project {
   position: relative;
   overflow: hidden;
-  height: 420px;
+  height: 480px;
   padding: 10%;
-  margin: 80px 0;
+  margin: 100px 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 8px;
+  border-radius: 16px;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.4);
 
   display: flex;
   align-items: center;
