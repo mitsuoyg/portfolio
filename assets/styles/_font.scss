@@ -11,16 +11,16 @@ body, body * {
 }
 @media only screen and (max-width: map-get($m-grid-breakpoints, 'lg')) {
     html {
-        font-size: 92% !important;
+        font-size: 93% !important;
     }
 }
 @media only screen and (max-width: map-get($m-grid-breakpoints, 'md')) {
     html {
-        font-size: 84% !important;
+        font-size: 86% !important;
     }
 }
 @media only screen and (max-width: map-get($m-grid-breakpoints, 'sm')) {
     html {
-        font-size: 76% !important;
+        font-size: 79% !important;
     }
 }

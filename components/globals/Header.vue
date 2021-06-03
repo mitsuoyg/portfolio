@@ -24,7 +24,7 @@ export default {
 
   &__body {
     max-width: 1400px;
-    height: 86px;
+    height: 78px;
     margin: 0 auto;
     padding: 10px;
   }

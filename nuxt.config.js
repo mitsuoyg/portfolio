@@ -15,7 +15,7 @@ export default {
     titleTemplate: '%s',
     title: 'Mitsuo Yshara',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },

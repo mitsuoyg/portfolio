@@ -1,33 +1,92 @@
 <template>
   <globals-section id="about" title="about" color="#021d44">
-    <div>
-      <p>
-        Soy un desarrollador web front-end con más de una década de experiencia.
-        Trabajo con agencias de todo el mundo para crear sitios web interactivos
-        ricos y de alto rendimiento que funcionen en todas las plataformas y
-        dispositivos.
-      </p>
-      <p>
-        Aunque estoy muy familiarizado con el uso de marcos, mis sitios web
-        están codificados principalmente a mano con HTML5, CSS3, SVG y
-        JavaScript.
-      </p>
-      <p>
-        Con un fuerte énfasis en la "mejora progresiva", busco formas creativas
-        de ampliar los límites del código del front-end del sitio web sin
-        comprometer la compatibilidad y el rendimiento del navegador.
-      </p>
-      <p>
-        En una búsqueda por mantenerme siempre actualizado, leo libros y asisto
-        a conferencias y reuniones.
-      </p>
+    <div class="about">
+      <div>
+        <p>Soy Mitsuo Yshara, un desarrollador web front-end.</p>
+        <p>
+          Me gusta crear cosas y experimentar con nuevas tecnologías web, por lo
+          que siempre me gusta estar actualizado.
+        </p>
+        <p>
+          Busco soluciones creativas front-end, poniéndome en el papel del
+          usuario para crear interfaces inteligentes y de utilidad.
+        </p>
+      </div>
+      <div class="networks">
+        <div v-for="(network, idx) in networks" :key="idx" class="network">
+          <v-icon class="network__icon">{{ network.icon }}</v-icon>
+        </div>
+      </div>
     </div>
   </globals-section>
 </template>
 
 <script>
-export default {};
+export default {
+  data: () => ({
+    networks: [
+      {
+        name: "Facebook",
+        icon: "mdi-facebook",
+      },
+      {
+        name: "Twitter",
+        icon: "mdi-twitter",
+      },
+      {
+        name: "Linkedin",
+        icon: "mdi-linkedin",
+      },
+      {
+        name: "Github",
+        icon: "mdi-github",
+      },
+    ],
+  }),
+};
 </script>
 
-<style>
+<style lang='scss' scoped>
+.about {
+  padding: 80px 0;
+  font-size: 1.1rem;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+$network-size: 100px;
+
+.networks {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: $network-size $network-size;
+  grid-template-rows: $network-size $network-size;
+  align-items: center;
+}
+.network {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    font-size: 4rem;
+    cursor: pointer;
+    color: #adadad;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+  .networks {
+    display: none;
+  }
+}
 </style>
