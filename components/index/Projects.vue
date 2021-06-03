@@ -1,37 +1,33 @@
 <template>
-  <div class="m-container">
-    <section id="projects" class="projects">
-      <h2 class="tag--start">projects</h2>
-      <div class="projects__body">
-        <div
-          v-for="(project, idx) in projects"
-          :key="idx"
-          class="project"
-          :style="`background-image: url(${project.image})`"
-        >
-          <div class="project__mask"></div>
-          <div class="project__body">
-            <h3 class="project__title">{{ project.title }}</h3>
-            <p class="project__description mt-3">{{ project.description }}</p>
-            <a v-if="project.url" :href="project.url" target="_blank">
-              <m-btn color="primary" class="mt-3"
-                >Visitar
-                <v-icon right style="font-size: 1rem">mdi-arrow-right</v-icon>
-              </m-btn>
-            </a>
-            <m-btn
-              v-if="project.demo"
-              @click="project.demo()"
-              color="secondary"
-              class="mt-3 ml-3"
-              >Probar
-            </m-btn>
-          </div>
-        </div>
+  <globals-section id="projects" title="projects" color="#092248">
+    <div
+      v-for="(project, idx) in projects"
+      :key="idx"
+      class="project"
+      :style="`background-image: url(${project.image})`"
+    >
+      <div class="project__mask"></div>
+      <div class="project__body">
+        <h3 class="project__title">{{ project.title }}</h3>
+        <p class="project__description mt-3">{{ project.description }}</p>
+        <a v-if="project.url" :href="project.url" target="_blank">
+          <m-btn color="primary" class="mt-3"
+            >Visitar
+            <v-icon right style="font-size: 1rem">mdi-arrow-right</v-icon>
+          </m-btn>
+        </a>
+        <m-btn
+          v-if="project.demo"
+          @click="project.demo()"
+          color="secondary"
+          class="mt-3 ml-3"
+          >Probar<v-icon right style="font-size: 1rem" class="mb-1 ml-3"
+            >mdi-robot</v-icon
+          >
+        </m-btn>
       </div>
-      <h2 class="tag--end">projects</h2>
-    </section>
-  </div>
+    </div>
+  </globals-section>
 </template>
 
 <script>
@@ -68,16 +64,6 @@ export default {
 
 <style lang='scss' scoped>
 $project-background: rgba(2, 29, 68, 0.75);
-
-.projects {
-  padding: 100px 0;
-
-  &__body {
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
-    margin: 12px 0;
-    padding: 1px 0 1px 6%;
-  }
-}
 
 .project {
   position: relative;

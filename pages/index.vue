@@ -2,6 +2,7 @@
   <div>
     <index-info />
     <index-projects />
+    <index-about />
   </div>
 </template>
 
