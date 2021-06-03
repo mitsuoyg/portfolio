@@ -1,6 +1,6 @@
 <template>
   <div class="m-container">
-    <section class="projects">
+    <section id="projects" class="projects">
       <h2 class="tag--start">projects</h2>
       <div class="projects__body">
         <div

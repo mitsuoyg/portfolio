@@ -10,15 +10,25 @@
         >
       </div>
     </div>
-    <div class="scroll">
-      <p>Trabajos</p>
-      <div class="scroll__line"></div>
+    <div @click="scroll()" class="scroll">
+      <div class="scroll__body">
+        <p>Proyectos</p>
+        <div class="arrow"></div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {};
+import { scrollTo } from "@/helpers/scroll";
+
+export default {
+  methods: {
+    scroll() {
+      scrollTo("projects");
+    },
+  },
+};
 </script>
 
 <style lang='scss' scoped>
@@ -44,13 +54,41 @@ export default {};
   left: 0;
   right: 0;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  &__body {
+    width: max-content;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+}
 
-  &__line {
+.arrow {
+  width: 0;
+  height: 40px;
+  margin-bottom: 4px;
+  border: 1px solid #fff;
+  position: relative;
+  transition: 0.3s;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: -5px;
+    width: 1px;
+    height: 10px;
+
+    // triangle
+    border-top: 10px solid #fff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+  }
+
+  .scroll__body:hover & {
     height: 50px;
-    border-left: 1px solid #fff;
   }
 }
 </style>

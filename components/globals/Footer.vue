@@ -2,11 +2,7 @@
   <footer class="footer">
     <div class="m-container">
       <div class="footer__body">
-        <img
-          src="logo.png"
-          alt=""
-          class="footer__logo"
-        />
+        <img @click="scrollTop()" src="logo.png" alt="" class="footer__logo" />
         <ul class="networks mt-4">
           <li v-for="(network, idx) in networks" :key="idx" class="network">
             <a href="">{{ network.name }}</a>
@@ -19,6 +15,8 @@
 </template>
 
 <script>
+import { scrollTop } from "@/helpers/scroll";
+
 export default {
   data: () => ({
     networks: [
@@ -36,6 +34,9 @@ export default {
       },
     ],
   }),
+  methods: {
+    scrollTop,
+  },
 };
 </script>
 
@@ -50,6 +51,7 @@ export default {
   }
   &__logo {
     max-width: 120px;
+    cursor: pointer;
   }
 }
 .networks {

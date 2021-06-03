@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <globals-header />
     <v-main>
       <nuxt class="m-app" />
     </v-main>
