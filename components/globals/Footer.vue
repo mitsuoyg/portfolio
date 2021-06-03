@@ -4,7 +4,7 @@
       <div class="footer__body">
         <img @click="scrollTop()" src="logo.png" alt="" class="footer__logo" />
         <ul class="networks mt-5">
-          <li v-for="(network, idx) in networks" :key="idx" class="network">
+          <li v-for="(network, idx) in networks" :key="idx" class="network link">
             <a href="">{{ network.name }}</a>
           </li>
         </ul>
@@ -61,7 +61,6 @@ export default {
 .network {
   margin: 10px 24px;
   text-align: center;
-  font-size: 1rem;
   a {
     color: #fff;
   }
