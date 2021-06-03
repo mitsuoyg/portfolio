@@ -19,6 +19,13 @@
                 <v-icon right style="font-size: 1rem">mdi-arrow-right</v-icon>
               </m-btn>
             </a>
+            <m-btn
+              v-if="project.demo"
+              @click="project.demo()"
+              color="secondary"
+              class="mt-3 ml-3"
+              >Probar
+            </m-btn>
           </div>
         </div>
       </div>
@@ -34,22 +41,25 @@ export default {
       {
         title: "Mi Portafolio",
         description:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium ullam accusamus aspernatur veniam, sunt dolor reprehenderit voluptates optio provident.",
+          "Donde te encuentras ahora :). Un sitio web donde muestro un poco de mis proyectos y conocimientos.",
         image: "projects/mibot.png",
-      },
-      {
-        title: "MiBot",
-        description:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium ullam accusamus aspernatur veniam, sunt dolor reprehenderit voluptates optio provident.",
-        image: "projects/mibot.png",
-        url: "https://mibot.netlify.app/",
       },
       {
         title: "BrainTutor",
         description:
-          "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis accusantium ullam accusamus aspernatur veniam, sunt dolor reprehenderit voluptates optio provident.",
+          "Braintutor es una plataforma para crear clases virtuales y chatbots educativos. Monitorear el aprendizaje de los alumnos y brindarles una enseñanza personalizada.",
         image: "projects/braintutor.png",
         url: "https://braintutor.app/",
+      },
+      {
+        title: "MiBot",
+        description:
+          "MiBot es una plataforma (en desarrollo) para la creación e integración de QA bots. Enfocado principalmente en su facilidad de entendimiento y uso.",
+        image: "projects/mibot.png",
+        url: "https://mibot.netlify.app/",
+        demo: () => {
+          console.log("Hola");
+        },
       },
     ],
   }),
