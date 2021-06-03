@@ -13,37 +13,22 @@
         </p>
       </div>
       <div class="networks">
-        <div v-for="(network, idx) in networks" :key="idx" class="network">
+        <a
+          v-for="(network, idx) in $store.state.networks"
+          :key="idx"
+          :href="network.url"
+          target="blank"
+          class="network"
+        >
           <v-icon class="network__icon">{{ network.icon }}</v-icon>
-        </div>
+        </a>
       </div>
     </div>
   </globals-section>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    networks: [
-      {
-        name: "Facebook",
-        icon: "mdi-facebook",
-      },
-      {
-        name: "Twitter",
-        icon: "mdi-twitter",
-      },
-      {
-        name: "Linkedin",
-        icon: "mdi-linkedin",
-      },
-      {
-        name: "Github",
-        icon: "mdi-github",
-      },
-    ],
-  }),
-};
+export default {};
 </script>
 
 <style lang='scss' scoped>

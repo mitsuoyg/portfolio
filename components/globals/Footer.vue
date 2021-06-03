@@ -4,8 +4,12 @@
       <div class="footer__body">
         <img @click="scrollTop()" src="logo.png" alt="" class="footer__logo" />
         <ul class="networks mt-5">
-          <li v-for="(network, idx) in networks" :key="idx" class="network link">
-            <a href="">{{ network.name }}</a>
+          <li
+            v-for="(network, idx) in $store.state.networks"
+            :key="idx"
+            class="network link"
+          >
+            <a :href="network.url" target="blank">{{ network.name }}</a>
           </li>
         </ul>
         <p class="footer__copy mt-8">© 2021 Mitsuo Yshara</p>
@@ -18,22 +22,6 @@
 import { scrollTop } from "@/helpers/scroll";
 
 export default {
-  data: () => ({
-    networks: [
-      {
-        name: "Facebook",
-      },
-      {
-        name: "Twitter",
-      },
-      {
-        name: "Linkedin",
-      },
-      {
-        name: "Github",
-      },
-    ],
-  }),
   methods: {
     scrollTop,
   },
@@ -50,7 +38,7 @@ export default {
     align-items: center;
   }
   &__logo {
-    max-width: 100px;
+    max-width: 80px;
     cursor: pointer;
   }
 }
