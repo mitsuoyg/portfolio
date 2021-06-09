@@ -23,6 +23,7 @@
     </div>
     <form @submit.prevent="onSubmit()" class="input">
       <v-text-field
+        id="chat-input"
         v-model="message"
         placeholder="Escribe tu mensaje"
         autocomplete="off"

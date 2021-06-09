@@ -1,5 +1,5 @@
 <template>
-  <div class="chatbot">
+  <div class="chatbot" @click="focus()">
     <chatbot-icon
       @onClick="$emit('input', true)"
       class="chatbot__icon"
@@ -19,6 +19,12 @@ export default {
     value: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    focus() {
+      let el = document.getElementById("chat-input");
+      el.focus();
     },
   },
 };
