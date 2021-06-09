@@ -108,7 +108,8 @@ export default {
 }
 
 .avatar {
-  height: 30%;
+  height: 160px;
+  max-height: 30%;
   padding: 20px;
 
   &__img {
