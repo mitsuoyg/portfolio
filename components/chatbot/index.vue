@@ -1,7 +1,10 @@
 <template>
-  <div class="chatbot" @click="focus()">
+  <div class="chatbot">
     <chatbot-icon
-      @onClick="$emit('input', true)"
+      @onClick="
+        $emit('input', true);
+        focus();
+      "
       class="chatbot__icon"
       :class="{ 'chatbot__icon--disabled': value }"
     />
