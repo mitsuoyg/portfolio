@@ -1,7 +1,9 @@
 <template>
   <div class="chat">
     <div style="position: relative">
-      <v-icon @click="$emit('onClose')" class="chat__close">mdi-close</v-icon>
+      <div class="chat__close">
+        <v-icon @click="$emit('onClose')">mdi-close</v-icon>
+      </div>
     </div>
     <div class="avatar">
       <img src="chatbot/bot.svg" alt="" class="avatar__img" />
