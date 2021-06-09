@@ -62,6 +62,8 @@ $spacing: 20px;
     position: absolute;
     right: 0;
     bottom: 0;
+    height: 560px;
+    width: 380px;
 
     border-radius: 12px;
     transition: $transition;
@@ -70,6 +72,27 @@ $spacing: 20px;
       transform: translateY(30px);
       opacity: 0;
       pointer-events: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  $spacing: 0;
+
+  .chatbot {
+    top: $spacing;
+    bottom: $spacing;
+    left: $spacing;
+    right: $spacing;
+
+    &__chat {
+      height: 100%;
+      width: 100%;
+      border-radius: 0;
+    }
+    &__icon {
+      right: 10px;
+      bottom: 10px;
     }
   }
 }
