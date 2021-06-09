@@ -3,6 +3,7 @@
     <globals-header />
     <v-main>
       <nuxt class="m-app" />
+      <chatbot />
     </v-main>
     <globals-footer />
   </v-app>

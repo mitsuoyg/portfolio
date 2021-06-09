@@ -1,0 +1,65 @@
+<template>
+  <div class="chatbot">
+    <chatbot-icon
+      @onClick="active = true"
+      class="chatbot__icon"
+      :class="{ 'chatbot__icon--disabled': active }"
+    />
+    <chatbot-chat
+      @onClose="active = false"
+      class="chatbot__chat"
+      :class="{ 'chatbot__chat--disabled': !active }"
+    />
+  </div>
+</template>
+
+<script>
+export default {
+  data: () => ({
+    active: false,
+  }),
+};
+</script>
+
+<style lang='scss' scoped>
+$transition: 0.5s;
+$spacing: 20px;
+
+.chatbot {
+  position: fixed;
+  top: $spacing;
+  bottom: $spacing;
+  left: $spacing;
+  right: $spacing;
+  pointer-events: none;
+  z-index: 1;
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    pointer-events: all;
+    transition: $transition;
+
+    &--disabled {
+      transform: translateY(30px);
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__chat {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    pointer-events: all;
+    transition: $transition;
+
+    &--disabled {
+      transform: translateY(30px);
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+}
+</style>

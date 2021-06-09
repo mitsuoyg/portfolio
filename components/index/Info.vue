@@ -12,8 +12,8 @@
           <v-icon right style="font-size: 1rem">mdi-arrow-right</v-icon></m-btn
         >
       </div>
-      <div @click="scrollTo('projects')" class="scroll">
-        <div class="scroll__body">
+      <div class="scroll">
+        <div class="scroll__body" @click="scrollTo('projects')">
           <p>Proyectos</p>
           <div class="arrow"></div>
         </div>
@@ -47,7 +47,7 @@ export default {
   }
   &__description {
     font-size: 1.4rem;
-    opacity: .6;
+    opacity: 0.6;
   }
 }
 
