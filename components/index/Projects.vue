@@ -11,7 +11,7 @@
         <h3 class="project__title">{{ project.title }}</h3>
         <p class="project__description mt-3">{{ project.description }}</p>
         <a v-if="project.url" :href="project.url" target="_blank">
-          <m-btn color="primary" class="mt-3"
+          <m-btn color="primary" class="mt-3 mr-3"
             >Visitar
             <v-icon right style="font-size: 1rem">mdi-arrow-right</v-icon>
           </m-btn>
@@ -20,7 +20,7 @@
           v-if="project.demo"
           @click="project.demo()"
           color="secondary"
-          class="mt-3 ml-3"
+          class="mt-3"
           >Probar<v-icon right style="font-size: 1rem" class="mb-1 ml-3"
             >mdi-robot</v-icon
           >
