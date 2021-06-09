@@ -91,8 +91,8 @@ export default {
 <style lang='scss' scoped>
 .chat {
   overflow: hidden;
-  height: 480px;
-  width: 320px;
+  height: 560px;
+  width: 380px;
   max-height: 100%;
   max-width: 100%;
   background: #072147;
