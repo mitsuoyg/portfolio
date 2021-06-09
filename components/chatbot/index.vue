@@ -1,10 +1,7 @@
 <template>
   <div class="chatbot">
     <chatbot-icon
-      @onClick="
-        $emit('input', true);
-        focus();
-      "
+      @onClick="$emit('input', true)"
       class="chatbot__icon"
       :class="{ 'chatbot__icon--disabled': value }"
     />
@@ -24,10 +21,12 @@ export default {
       default: false,
     },
   },
-  methods: {
-    focus() {
-      let el = document.getElementById("chat-input");
-      el.focus();
+  watch: {
+    value() {
+      if (this.value) {
+        let el = document.getElementById("chat-input");
+        el.focus();
+      }
     },
   },
 };
