@@ -21,14 +21,14 @@ export default {
       default: false,
     },
   },
-  watch: {
-    value() {
-      if (this.value) {
-        let el = document.getElementById("chat-input");
-        el.focus();
-      }
-    },
-  },
+  //   watch: {
+  //     value() {
+  //       if (this.value) {
+  //         let el = document.getElementById("chat-input");
+  //         el.focus();
+  //       }
+  //     },
+  //   },
 };
 </script>
 
