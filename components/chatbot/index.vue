@@ -1,23 +1,26 @@
 <template>
   <div class="chatbot">
     <chatbot-icon
-      @onClick="active = true"
+      @onClick="$emit('input', true)"
       class="chatbot__icon"
-      :class="{ 'chatbot__icon--disabled': active }"
+      :class="{ 'chatbot__icon--disabled': value }"
     />
     <chatbot-chat
-      @onClose="active = false"
+      @onClose="$emit('input', false)"
       class="chatbot__chat"
-      :class="{ 'chatbot__chat--disabled': !active }"
+      :class="{ 'chatbot__chat--disabled': !value }"
     />
   </div>
 </template>
 
 <script>
 export default {
-  data: () => ({
-    active: false,
-  }),
+  props: {
+    value: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 

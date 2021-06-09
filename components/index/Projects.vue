@@ -33,7 +33,10 @@
 <script>
 export default {
   data: () => ({
-    projects: [
+    projects: [],
+  }),
+  mounted() {
+    this.projects = [
       {
         title: "Mi Portafolio",
         description:
@@ -54,11 +57,11 @@ export default {
         image: "projects/mibot.png",
         url: "https://mibot.netlify.app/",
         demo: () => {
-          console.log("Hola");
+          this.$store.commit("setChatbot", true);
         },
       },
-    ],
-  }),
+    ];
+  },
 };
 </script>
 

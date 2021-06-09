@@ -37,7 +37,17 @@ import { scrollBottom } from "@/helpers/scroll";
 export default {
   data: () => ({
     message: "",
-    messages: [],
+    messages: [
+      {
+        message: [
+          {
+            type: "text",
+            value: "Hola, soy Mibot. ¿En qué puedo ayudarte?",
+          },
+        ],
+        user: "bot",
+      },
+    ],
   }),
   methods: {
     addMessage(message, user) {

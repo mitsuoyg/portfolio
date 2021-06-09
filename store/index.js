@@ -1,4 +1,5 @@
 export const state = () => ({
+    chatbot: false,
     networks: [
         {
             name: "Facebook",
@@ -24,4 +25,7 @@ export const state = () => ({
 })
 
 export const mutations = {
+    setChatbot(state, value) {
+        state.chatbot = value
+    }
 }

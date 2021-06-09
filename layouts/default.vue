@@ -3,14 +3,25 @@
     <globals-header />
     <v-main>
       <nuxt class="m-app" />
-      <chatbot />
+      <chatbot v-model="chatbot" />
     </v-main>
     <globals-footer />
   </v-app>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    chatbot: {
+      get() {
+        return this.$store.state.chatbot;
+      },
+      set(value) {
+        this.$store.commit("setChatbot", value);
+      },
+    },
+  },
+};
 </script>
 
 <style lang='scss'>
