@@ -7,7 +7,12 @@
       <img src="chatbot/bot.svg" alt="" class="avatar__img" />
     </div>
     <div id="chat-messages" class="messages">
-      <div v-for="({ message }, idx) in messages" :key="idx" class="message">
+      <div
+        v-for="({ message, user }, idx) in messages"
+        :key="idx"
+        class="message"
+        :class="`message--${user === 'user' ? 'me' : 'other'}`"
+      >
         <div v-for="({ type, value }, idx_) in message" :key="idx_">
           <p v-if="type === 'text'" class="ma-0">{{ value }}</p>
           <img v-else-if="type === 'image'" :src="value" />
@@ -79,8 +84,6 @@ export default {
   max-height: 100%;
   max-width: 100%;
   background: #072147;
-
-  border-radius: 12px;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
 
   display: flex;
@@ -125,10 +128,30 @@ export default {
 }
 
 .message {
+  overflow: hidden;
+  width: max-content;
+  max-width: 80%;
+  border-radius: 8px;
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+
+  p {
+    padding: 6px 12px;
+  }
   img {
     display: block;
     max-width: 100%;
-    border-radius: 6px;
+    margin: 0 auto;
+  }
+
+  &--me {
+    background: rgb(14, 15, 121);
+    margin-left: auto;
+  }
+  &--other {
+    background: #000;
   }
 }
 

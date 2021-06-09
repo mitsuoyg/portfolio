@@ -35,10 +35,10 @@ $spacing: 20px;
   z-index: 1;
 
   &__icon {
+    pointer-events: all;
     position: absolute;
     right: 0;
     bottom: 0;
-    pointer-events: all;
     transition: $transition;
 
     &--disabled {
@@ -49,10 +49,12 @@ $spacing: 20px;
   }
 
   &__chat {
+    pointer-events: all;
     position: absolute;
     right: 0;
     bottom: 0;
-    pointer-events: all;
+
+    border-radius: 12px;
     transition: $transition;
 
     &--disabled {
