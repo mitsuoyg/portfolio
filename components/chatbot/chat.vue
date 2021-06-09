@@ -147,11 +147,11 @@ export default {
   }
 
   &--me {
-    background: rgb(14, 15, 121);
+    background: #204375;
     margin-left: auto;
   }
   &--other {
-    background: #000;
+    background: #1e3250;
   }
 }
 
