@@ -20,6 +20,13 @@
           <img v-else-if="type === 'image'" :src="value" />
         </div>
       </div>
+      <div v-if="isWriting" class="message message--other">
+        <div class="message__loading">
+          <div class="message__dot" style="--offset: 0s"></div>
+          <div class="message__dot" style="--offset: 0.2s"></div>
+          <div class="message__dot" style="--offset: 0.4s"></div>
+        </div>
+      </div>
     </div>
     <form @submit.prevent="onSubmit()" class="input">
       <v-text-field
@@ -51,6 +58,8 @@ export default {
         user: "bot",
       },
     ],
+    isWriting: false,
+    timeWriting: 500,
   }),
   methods: {
     addMessage(message, user) {
@@ -65,6 +74,7 @@ export default {
     async onSubmit() {
       let new_message = this.message;
       this.message = "";
+      this.isWriting = true;
       this.addMessage(
         [
           {
@@ -75,8 +85,13 @@ export default {
         "user"
       );
 
-      let res = await this.getResponse(new_message);
-      this.addMessage(res, "bot");
+      setTimeout(async () => {
+        try {
+          let res = await this.getResponse(new_message);
+          this.addMessage(res, "bot");
+        } catch (error) {}
+        this.isWriting = false;
+      }, this.timeWriting);
     },
     async getResponse(message) {
       let { data } = await this.$axios.post(
@@ -165,9 +180,35 @@ export default {
   &--other {
     background: #1e3250;
   }
+
+  &__loading {
+    padding: 18px 12px 10px;
+    display: flex;
+  }
+  &__dot {
+    width: 6px;
+    height: 6px;
+    margin: 0 2px;
+    background: #949494;
+    border-radius: 50%;
+    animation: blink 1s linear infinite var(--offset);
+  }
 }
 
 .input {
   padding: 10px;
+}
+
+// ANIMATION
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 </style>
