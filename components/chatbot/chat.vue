@@ -88,9 +88,9 @@ export default {
 
       setTimeout(async () => {
         try {
-          let res = await this.getResponse(new_message);
-          this.addMessage(res, "bot");
-          let text = this.blocksToText(res);
+          let blocks = await this.getResponse(new_message);
+          this.addMessage(blocks, "bot");
+          let text = this.blocksToText(blocks);
           TextToSpeech(text, () => {});
         } catch (error) {}
         this.isWriting = false;
