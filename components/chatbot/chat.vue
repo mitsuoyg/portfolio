@@ -43,6 +43,7 @@
 
 <script>
 import { scrollBottom } from "@/helpers/scroll";
+import { TextToSpeech } from "@/helpers/speech";
 
 export default {
   data: () => ({
@@ -89,6 +90,8 @@ export default {
         try {
           let res = await this.getResponse(new_message);
           this.addMessage(res, "bot");
+          let text = this.blocksToText(res);
+          TextToSpeech(text, () => {});
         } catch (error) {}
         this.isWriting = false;
       }, this.timeWriting);
@@ -99,6 +102,13 @@ export default {
         { agent: "60ad7548ae6e5f4c76e9c5da", message }
       );
       return data.answer;
+    },
+    blocksToText(blocks) {
+      let text = "";
+      blocks.forEach(({ type, value }) => {
+        if (type === "text") text += `${value}.\n`;
+      });
+      return text;
     },
   },
 };
